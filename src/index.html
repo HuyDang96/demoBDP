@@ -35,6 +35,11 @@
     snowplow("enableActivityTracking", { minimumVisitLength: 10, heartbeatDelay: 10 });
     snowplow("enableLinkClickTracking");
     snowplow("trackPageView");
+    snowplow(
+      "addPlugin:sp",
+      "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-web-vitals@3/dist/index.umd.min.js",
+      ["snowplowWebVitals", "WebVitalsPlugin"]
+    );
   </script>
 </head>
 
