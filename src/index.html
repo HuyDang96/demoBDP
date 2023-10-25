@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
-  <script type="text/javascript" async=1>
+  <script type="text/javascript" async="1">
     ;(function(p,l,o,w,i,n,g){
       if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
       p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
@@ -16,7 +16,7 @@
       window,
       document,
       "script",
-      "https://cdn.jsdelivr.net/npm/@snowplow/javascript-tracker@3.5.0/dist/sp.min.js",
+      "https://cdn.jsdelivr.net/npm/@snowplow/javascript-tracker@3.16.0/dist/sp.min.js",
       "snowplow")
     );
     
@@ -32,6 +32,7 @@
     });
     
     // send first heartbeat after 10 seconds, and every 10 seconds thereafter
+    snowplow('setUserId', "example_user_id");
     snowplow("enableActivityTracking", { minimumVisitLength: 10, heartbeatDelay: 10 });
     snowplow("enableLinkClickTracking");
     snowplow("trackPageView");
